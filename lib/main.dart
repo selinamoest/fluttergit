@@ -1,23 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:http/http.dart' as http;
-import 'dart:convert';
-
-void postData() async {
-  http.Response response = await http.post(
-    'https://api.example.com/data',
-    body: jsonEncode(<String, String>{
-      'key': 'value',
-    }),
-  );
-
-  if (response.statusCode == 200) {
-    String data = response.body;
-    var decodedData = jsonDecode(data);
-    print(decodedData);
-  } else {
-    print(response.statusCode);
-  }
-}
 
 void main() {
   runApp(const MyApp());
@@ -142,3 +123,4 @@ class _MyHomePageState extends State<MyHomePage> {
     );
   }
 }
+
